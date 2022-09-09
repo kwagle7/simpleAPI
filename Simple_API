@@ -1,0 +1,53 @@
+import "./styles.css";
+
+import { React, useState } from "react";
+import axios from "axios";
+
+export default function App() {
+  const [counter, setCounter] = useState(0);
+  const [multiplier, setMultiplier] = useState(1);
+  const [quote, setQuote] = useState("");
+
+  const getLine = () => {
+    axios
+      .get("https://api.quotable.io/random")
+      .then((res) => {
+        setQuote(res.data.content);
+      })
+      .catch((err) => {
+        err.console.log("oh No");
+      });
+  };
+
+  const increaseCounter = () => {
+    setCounter(counter + 1);
+  };
+
+  const doubleMultiply = () => {
+    setMultiplier(multiplier * 2);
+  };
+
+  return (
+    <div className="App">
+      <h1>Hello Pulse</h1>
+      <img
+        class="kw"
+        src="https://yt3.ggpht.com/ytc/AMLnZu80luV0r3flDAiqaNgREig8H9Wan75AICMxV3bjd0E=s900-c-k-c0x00ffffff-no-rj"
+        alt="Kshitij Wagle"
+      />
+      <div className="emp">Employee Name: Kshitij Wagle</div>
+      <h2>Simple Counter</h2>
+      <p>{counter}</p>
+      <button onClick={increaseCounter}>Increase Counter</button>
+
+      <h2>Multiplication</h2>
+      <p>{multiplier}</p>
+      <button onClick={doubleMultiply}>Multiply by 2</button>
+
+      <p></p>
+      <h2>Quote of the Day</h2>
+      <p class="quoteStyle">{quote}</p>
+      <button onClick={getLine}>Surprise Me</button>
+    </div>
+  );
+}

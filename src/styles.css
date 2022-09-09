@@ -1,0 +1,36 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 25px;
+  display: block;
+  background-color: cornsilk;
+  border-style: solid;
+}
+.emp {
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: 700;
+}
+h2 {
+  background-color: green;
+  color: white;
+}
+/* button {
+  background-color: yellow;
+} */
+p9 {
+  background-color: pink;
+}
+.kw {
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.quoteStyle {
+  background-color: lightcyan;
+  outline: 5px green;
+  font-style: italic;
+  height: 40px;
+}
